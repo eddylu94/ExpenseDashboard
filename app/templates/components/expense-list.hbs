@@ -1,0 +1,7 @@
+<h2>{{@title}}</h2>
+
+<ul>
+		{{#each @expenses as |expense|}}
+				<li><button {{action "printExpense" expense}}>{{expense}}</button></li>
+		{{/each}}
+</ul>
