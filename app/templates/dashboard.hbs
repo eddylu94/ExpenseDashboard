@@ -1,1 +1,2 @@
-<ExpenseList @title="Expenses" @expenses={{this.model}} />
+<ExpenseForm @add={{action "addExpense"}} />
+<ExpenseList @title="Expenses" @expenses={{this.model.expenses}} />
