@@ -1,2 +1,2 @@
-<ExpenseForm @add={{action "addExpense"}} />
+<ExpenseForm @add={{action "addExpense"}} @update={{action "onChange"}} @inputVal={{this.model.inputValue}} />
 <ExpenseList @title="Expenses" @expenses={{this.model.expenses}} />
