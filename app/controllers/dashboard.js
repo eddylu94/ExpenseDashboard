@@ -1,13 +1,19 @@
 import Controller from '@ember/controller';
 
+const MODEL_INPUT_VALUE = "model.inputValue";
+
 export default Controller.extend({
   actions: {
-		onChange(value) {
-			this.set("model.inputValue", value);
+		onInput(value) {
+			this.set(MODEL_INPUT_VALUE, value);
 		},
 
-		addExpense(expense) {
-			this.model.expenses.pushObject(expense);
+		addExpense() {
+			const inputValue = this.get(MODEL_INPUT_VALUE);
+			if (inputValue) {
+				this.model.expenses.pushObject(inputValue);
+				this.set(MODEL_INPUT_VALUE, "");
+			}
 		}
 	}
 });

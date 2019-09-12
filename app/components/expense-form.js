@@ -1,13 +1,21 @@
 import Component from '@ember/component';
 
+const ENTER_KEY = "Enter";
+
 export default Component.extend({
 	actions: {
-		onChange(event) {
+		onInput(event) {
 			this.update(event.target.value);
 		},
 
-		addExpense(expense) {
-			this.add(expense);
+		addExpense() {
+			this.add();
+		},
+
+		enterHandler(event) {
+			if (event.key === ENTER_KEY) {
+				this.add();
+			};
 		}
 	}
 });

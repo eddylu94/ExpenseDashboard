@@ -1,4 +1,4 @@
 <h2>Expense Form</h2>
 
-<input id="desc" value={{@inputVal}} placeholder="Description" onchange={{action "onChange"}}>
-<button {{action "addExpense" @inputVal}}>Submit</button>
+<input id="desc" value={{@inputVal}} placeholder="Description" oninput={{action "onInput"}} onkeypress={{action "enterHandler"}}>
+<button {{action "addExpense"}}>Submit</button>
