@@ -5,7 +5,7 @@ const ENTER_KEY = "Enter";
 export default Component.extend({
 	actions: {
 		onInput(event) {
-			this.update(event.target.value);
+			this.update(event.target.id, event.target.value);
 		},
 
 		addExpense() {
