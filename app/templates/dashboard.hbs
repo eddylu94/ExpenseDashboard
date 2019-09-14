@@ -1,2 +1,18 @@
-<ExpenseForm @add={{action "addExpense"}} @select={{action "onSelect"}} @update={{action "onInput"}} @descriptionInputVal={{this.model.descriptionInputValue}} @categoryOptions={{this.model.options}} @costInputVal={{this.model.costInputValue}} @isDisabled={{this.model.isSubmitDisabled}} />
-<ExpenseList @title="Expenses" @expenses={{this.model.expenses}} />
+<div class="container">
+	<SummaryPane @expenses={{this.model.expenses}} />
+	<div>
+		<ExpenseForm
+			@add={{action "addExpense"}}
+			@select={{action "onSelect"}}
+			@update={{action "onInput"}}
+			@descriptionInputVal={{this.model.descriptionInputValue}}
+			@categoryOptions={{this.model.options}}
+			@costInputVal={{this.model.costInputValue}}
+			@isDisabled={{this.model.isSubmitDisabled}}
+		/>
+		<ExpenseList
+			@title="Expenses"
+			@expenses={{this.model.expenses}}
+		/>
+	</div>
+</div>
