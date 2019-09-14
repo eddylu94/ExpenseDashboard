@@ -2,7 +2,11 @@
 
 <ul>
 		{{#each @expenses as |expense|}}
-				<li><button {{action "printExpense" expense}}>{{expense.description}}</button>
-				<button {{action "printExpense" expense}}>{{expense.cost}}</button></li>
+				<li>
+						<span class="cell">{{expense.description}}</span>
+						<span class="cell">{{expense.category}}</span>
+						<span class="cell">{{expense.cost}}</span>
+						<button {{action "printExpense" expense}}>Button</button>
+				</li>
 		{{/each}}
 </ul>

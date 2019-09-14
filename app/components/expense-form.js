@@ -8,6 +8,10 @@ export default Component.extend({
 			this.update(event.target.id, event.target.value);
 		},
 
+		onSelect(selection) {
+			this.select(selection);
+		},
+
 		addExpense() {
 			this.add();
 		},
@@ -15,7 +19,7 @@ export default Component.extend({
 		enterHandler(event) {
 			if (event.key === ENTER_KEY) {
 				this.add();
-			};
+			}
 		}
 	}
 });
