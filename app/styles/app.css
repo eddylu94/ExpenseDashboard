@@ -1,16 +1,123 @@
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+.app {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	font-family: Calibri;
+}
+
+h2 {
+	margin-top: 0;
+	color: #333333;
+}
+
 .container {
 	display: flex;
 	flex-direction: row;
+	flex: 1;
+}
+
+.navbar {
+	background-color: #333333;
+	color: #FFFFFF;
+	padding: 10px 20px;
+	font-size: 1.5em;
+	font-weight: bold;
+	height: 50px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.total-tile {
+	padding: 20px;
+	color: #FFFFFF;
 }
 
 .total {
-	margin-bottom: 20px;	
+	font-size: xx-large;
+	font-weight: bold;
+}
+
+.summary-pane {
+	background-color: #686868;
+	min-width: 200px;
+	height: 100%;;
+}
+
+.summary-tile {
+	margin-bottom: 5px;
+	background-color: #484848;
+	padding: 20px;
+	color: #FFFFFF;
 }
 
 .summary {
-	margin-bottom: 20px;	
+	font-size: large;
+	font-weight: bold;
 }
 
-.cell {
-	border: 1px solid #000000;
+.dashboard-body {
+	padding: 20px;
+	width: 100%;
+}
+
+.expense-form {
+	margin-bottom: 20px;
+}
+
+.expense-input {
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+	box-sizing: border-box;
+	height: 35px;
+}
+
+#expenses {
+  border-collapse: collapse;
+	width: 100%;
+	max-width: 800px;
+}
+
+#expenses td, #expenses th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#expenses tr:nth-child(even){background-color: #f2f2f2;}
+
+#expenses tr:hover {background-color: #ddd;}
+
+#expenses th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #686868;
+  color: white;
+}
+
+#description {
+	width: 300px;
+}
+
+#cost {
+	width: 100px;
+}
+
+.edit-button {
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+	box-sizing: border-box;
+	height: 35px;
+	width: 100%;
+	cursor: pointer;
+	background-color: #A8A8A8;
+	color: #FFFFFF;
 }

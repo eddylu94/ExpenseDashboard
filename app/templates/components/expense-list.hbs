@@ -1,12 +1,20 @@
 <h2>{{@title}}</h2>
 
-<ul>
-		{{#each @expenses as |expense|}}
-				<li>
-						<span class="cell">{{expense.description}}</span>
-						<span class="cell">{{expense.category}}</span>
-						<span class="cell">{{expense.cost}}</span>
-						<button {{action "printExpense" expense}}>Button</button>
-				</li>
-		{{/each}}
-</ul>
+<table id="expenses">
+		<thead>
+			<th>Description</th>
+			<th>Category</th>
+			<th>Cost</th>
+			<th>Edit</th>
+		</thead>
+		<tbody>
+				{{#each @expenses as |expense|}}
+						<tr>
+								<td>{{expense.description}}</td>
+								<td>{{expense.category}}</td>
+								<td>${{expense.cost}}</td>
+								<td><button class="edit-button" {{action "printExpense" expense}}>Edit</button></td>
+						</tr>
+				{{/each}}
+		</tbody>
+</table>

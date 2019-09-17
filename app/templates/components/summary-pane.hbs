@@ -1,11 +1,13 @@
-<h2>Summary Pane</h2>
-
-<h3>Total Expenses</h3>
-<div class="total">{{@total}}</div>
-
-{{#each @summaries as |summary|}}
-		<div class="summary">
-				<div>{{summary.category}}</div>
-				<div>{{summary.cost}}</div>
+<div class="summary-pane">
+		<div class="total-tile">
+				<div>Total Expenses</div>
+				<div class="total">${{@total}}</div>
 		</div>
-{{/each}}
+
+		{{#each @summaries as |summary|}}
+				<div class="summary-tile">
+						<div>{{summary.category}}</div>
+						<div class="summary">${{summary.cost}}</div>
+				</div>
+		{{/each}}
+</div>

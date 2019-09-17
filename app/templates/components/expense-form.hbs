@@ -1,12 +1,14 @@
-<h2>Expense Form</h2>
+<div class="expense-form">
+		<h2>Expense Form</h2>
 
-<input id="description" value={{@descriptionInputVal}} placeholder="Description" oninput={{action "onInput"}} onkeypress={{action "enterHandler"}}>
-<select onchange={{action "onSelect" value="target.value"}}>
-		<option value="" selected  hidden >Category</option>
-		<option value="" selected >Category</option>
-		{{#each @categoryOptions as |categoryOption|}}
-		<option value={{categoryOption}}>{{categoryOption}}</option>
-		{{/each}}
-</select>
-<input id="cost" value={{@costInputVal}} placeholder="Cost" oninput={{action "onInput"}} onkeypress={{action "enterHandler"}}>
-<button {{action "addExpense"}} disabled={{@isDisabled}}>Submit</button>
+		<input class="expense-input" id="description" value={{@descriptionInputVal}} placeholder="Description" oninput={{action "onInput"}} onkeypress={{action "enterHandler"}}>
+		<select class="expense-input" onchange={{action "onSelect" value="target.value"}}>
+				<option value="" selected  hidden >Category</option>
+				<option value="" selected >Category</option>
+				{{#each @categoryOptions as |categoryOption|}}
+				<option value={{categoryOption}}>{{categoryOption}}</option>
+				{{/each}}
+		</select>
+		<input class="expense-input" id="cost" value={{@costInputVal}} placeholder="Cost" oninput={{action "onInput"}} onkeypress={{action "enterHandler"}}>
+		<button class="expense-input" {{action "addExpense"}} disabled={{@isDisabled}}>Submit</button>
+</div>
