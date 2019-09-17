@@ -18,25 +18,25 @@ const getModelInputKey = (id) => {
 	}
 };
 
-const isSubmitDisabled = (ctx) => {
-	const descriptionInputValue = ctx.get(MODEL_DESCRIPTION_INPUT_VALUE);
-	const costInputValue = ctx.get(MODEL_COST_INPUT_VALUE);
-	const categoryValue = ctx.get(MODEL_CATEGORY_SELECT_VALUE);
-
-	return !(descriptionInputValue && categoryValue && costInputValue > 0);
-}
-
 export default Controller.extend({
+	isSubmitDisabled: function() {
+		const descriptionInputValue = this.get(MODEL_DESCRIPTION_INPUT_VALUE);
+		const costInputValue = this.get(MODEL_COST_INPUT_VALUE);
+		const categoryValue = this.get(MODEL_CATEGORY_SELECT_VALUE);
+	
+		return !(descriptionInputValue && categoryValue && costInputValue > 0);
+	},
+
   actions: {
 		onInput(id, value) {
 			const key = getModelInputKey(id);
 			this.set(key, value);
-			this.set(MODEL_SUBMIT_DISABLED, isSubmitDisabled(this));
+			this.set(MODEL_SUBMIT_DISABLED, this.isSubmitDisabled());
 		},
 
 		onSelect(selection) {
 			this.set(MODEL_CATEGORY_SELECT_VALUE, selection);
-			this.set(MODEL_SUBMIT_DISABLED, isSubmitDisabled(this));
+			this.set(MODEL_SUBMIT_DISABLED, this.isSubmitDisabled());
 		},
 
 		addExpense() {
@@ -44,7 +44,7 @@ export default Controller.extend({
 			const costInputValue = this.get(MODEL_COST_INPUT_VALUE);
 			const categoryValue = this.get(MODEL_CATEGORY_SELECT_VALUE);
 
-			const isDisabled = isSubmitDisabled(this);
+			const isDisabled = this.isSubmitDisabled();
 			if (!isDisabled) {
 				this.model.expenses.pushObject({
 					description: descriptionInputValue,
@@ -53,7 +53,7 @@ export default Controller.extend({
 				});
 				this.set(MODEL_DESCRIPTION_INPUT_VALUE, "");
 				this.set(MODEL_COST_INPUT_VALUE, "");
-				this.set(MODEL_SUBMIT_DISABLED, isDisabled);
+				this.set(MODEL_SUBMIT_DISABLED, true);
 			}
 		}
 	}

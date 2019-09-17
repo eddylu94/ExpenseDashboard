@@ -1,5 +1,5 @@
 <div class="container">
-	<SummaryPane @expenses={{this.model.expenses}} />
+	<SummaryPane @total={{total this.model.expenses}} />
 	<div>
 		<ExpenseForm
 			@add={{action "addExpense"}}
