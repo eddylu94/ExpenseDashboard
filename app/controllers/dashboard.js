@@ -49,7 +49,7 @@ export default Controller.extend({
 				this.model.expenses.pushObject({
 					description: descriptionInputValue,
 					category: categoryValue,
-					cost: parseFloat(costInputValue).toFixed(2)
+					cost: parseFloat(costInputValue)
 				});
 				this.set(MODEL_DESCRIPTION_INPUT_VALUE, "");
 				this.set(MODEL_COST_INPUT_VALUE, "");

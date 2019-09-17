@@ -1,18 +1,21 @@
 <div class="container">
-	<SummaryPane @total={{total this.model.expenses}} />
-	<div>
-		<ExpenseForm
-			@add={{action "addExpense"}}
-			@select={{action "onSelect"}}
-			@update={{action "onInput"}}
-			@descriptionInputVal={{this.model.descriptionInputValue}}
-			@categoryOptions={{this.model.options}}
-			@costInputVal={{this.model.costInputValue}}
-			@isDisabled={{this.model.isSubmitDisabled}}
+		<SummaryPane
+			@total={{total this.model.expenses}}
+			@summaries={{summarize this.model.expenses}}
 		/>
-		<ExpenseList
-			@title="Expenses"
-			@expenses={{this.model.expenses}}
-		/>
-	</div>
+		<div>
+				<ExpenseForm
+					@add={{action "addExpense"}}
+					@select={{action "onSelect"}}
+					@update={{action "onInput"}}
+					@descriptionInputVal={{this.model.descriptionInputValue}}
+					@categoryOptions={{this.model.options}}
+					@costInputVal={{this.model.costInputValue}}
+					@isDisabled={{this.model.isSubmitDisabled}}
+				/>
+				<ExpenseList
+					@title="Expenses"
+					@expenses={{this.model.expenses}}
+				/>
+		</div>
 </div>

@@ -1,4 +1,11 @@
 <h2>Summary Pane</h2>
 
 <h3>Total Expenses</h3>
-<div>{{@total}}</div>
+<div class="total">{{@total}}</div>
+
+{{#each @summaries as |summary|}}
+		<div class="summary">
+				<div>{{summary.category}}</div>
+				<div>{{summary.cost}}</div>
+		</div>
+{{/each}}

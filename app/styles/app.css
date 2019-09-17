@@ -3,6 +3,14 @@
 	flex-direction: row;
 }
 
+.total {
+	margin-bottom: 20px;	
+}
+
+.summary {
+	margin-bottom: 20px;	
+}
+
 .cell {
 	border: 1px solid #000000;
 }

@@ -19,6 +19,21 @@ export default Route.extend({
 					description: 'Flour',
 					category: Category.Groceries,
 					cost: "1.89"
+				},
+				{
+					description: 'Drinks at Redhook Brewery',
+					category: Category.FoodDrinks,
+					cost: "29.51"
+				},
+				{
+					description: 'Gas',
+					category: Category.Gas,
+					cost: "30.00"
+				},
+				{
+					description: 'Eggs',
+					category: Category.Groceries,
+					cost: "3.49"
 				}
 			],
 			descriptionInputValue: "",
